@@ -36,8 +36,12 @@
               markerhandler
               type="nft"
               url="assets/markers/marker"
-              crossorigin="anonymous"
+              smooth="true"
+              smoothCount="10"
+              smoothTolerance=".01"
+              smoothThreshold="5"
             >
+            <a-entity gltf-model="url(assets/models/among_us_character/scene.gltf)" scale="0.01 0.01 0.01" position="0 0 0"></a-entity>
             </a-nft>
             <a-entity camera></a-entity>
           </a-scene>
