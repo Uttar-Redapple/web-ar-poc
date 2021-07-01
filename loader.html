@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/logic.js"></script>
+    </head>
+    <body>
+                  <!-- minimal loader shown until image descriptors are loaded -->
+                  <div class="arjs-loader">
+                    <!-- <div>Loading, please wait...</div> -->
+                    <div class="lds-hourglass"></div>
+                  </div>
+                  <div class="scene-loader">
+                    <a-scene
+                    vr-mode-ui="enabled: false;"
+                    renderer="logarithmicDepthBuffer: true;"
+                    embedded
+                    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: true;"
+                  >
+                    <!-- we use cors proxy to avoid cross-origin problems -->
+                    <!-- we use the trex image shown on the homepage of the docs -->
+                    <a-nft
+                      markerhandler
+                      type="nft"
+                      url="assets/markers/marker"
+                      smooth="true"
+                      smoothCount="10"
+                      smoothTolerance=".01"
+                      smoothThreshold="5"
+                    >
+                    <a-entity gltf-model="url(assets/models/among_us_character/scene.gltf)" 
+                    scale="0.4 0.4 0.4" 
+                    position="0 0 0"
+                    rotation="90 180 0"
+                    animation-mixer="loop:repeat"
+                    modify-materials></a-entity>
+                    </a-nft>
+                    <a-entity camera></a-entity>
+                  </a-scene>
+                  </div>
+    </body>
+</html>
