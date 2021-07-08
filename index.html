@@ -5,48 +5,25 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
         <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <!-- import events.js script -->
-        <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
         <link rel="stylesheet" href="css/styles.css">
         <script src="js/logic.js"></script>
     </head>
     <body>
                   <!-- minimal loader shown until image descriptors are loaded -->
-                  <div class="arjs-loader">
-                    <!-- <div>Loading, please wait...</div> -->
-                    <div class="lds-hourglass"></div>
-                  </div>
-                  <div class="scene-loader">
-                    <a-scene
-                    vr-mode-ui="enabled: false;"
-                    renderer="logarithmicDepthBuffer: true;"
-                    embedded
-                    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: true;"
-                  >
-                    <!-- we use cors proxy to avoid cross-origin problems -->
-                    <!-- we use the trex image shown on the homepage of the docs -->
-                    <a-nft
-                      markerhandler
-                      emitevents="true"
-                      cursor="rayOrigin: mouse"
-                      id="animated-marker"
-                      type="nft"
-                      url="assets/markers/marker"
-                      smooth="true"
-                      smoothCount="10"
-                      smoothTolerance=".01"
-                      smoothThreshold="5"
-                    >
+                  <a-scene>
+                    <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
+                    <!-- <a-sphere position="0 1.25 -5" radius="0.25" color="#EF2D5E"></a-sphere> -->
+                    <!-- <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+                    <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+                    <a-sky color="#ECECEC"></a-sky> -->
                     <a-entity
-                    id="animated-model"
-                    gltf-model="url(assets/models/among_us_character/scene.gltf)" 
-                    scale="0.4 0.4 0.4" 
-                    position="0 0 0"
-                    rotation="90 180 0"
+                    gltf-model="url(assets/models/stylized_ww1_plane/scene.gltf)" 
+                    scale="0.01 0.01 0.01" 
+                    position="0 0 -10"
+                    rotation="0 0 0"
                     animation-mixer="loop:repeat"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
                     modify-materials></a-entity>
-                    </a-nft>
-                    <a-entity camera></a-entity>
                   </a-scene>
-                  </div>
     </body>
 </html>
